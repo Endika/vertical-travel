@@ -21,39 +21,35 @@
 ##############################################################################
 
 {
-    'name': 'Travel',
-    'version': '8.0.1.0.0',
+    'name': 'Travel Journey - HR Bindings',
+    'version': '0.1',
     'author': "Savoir-faire Linux,Odoo Community Association (OCA)",
     'maintainer': 'Savoir-faire Linux',
     'website': 'http://www.savoirfairelinux.com',
     'license': 'AGPL-3',
     'category': 'Customer Relationship Management',
-    'summary': 'Travel Management',
+    'summary': "HR bindings for Travel Journey",
     'description': """
-Travel
-======
+Travel Journey - HR Bindings
+============================
 
-Travel management with passengers.
+Adds HR department to journey reports
 
 Contributors
 ------------
 * Sandy Carter (sandy.carter@savoirfairelinux.com)
+* Joao Alfredo Gama Batista (joao.gama@savoirfairelinux.com)
 """,
-    'depends': [
-        'mail',
-        'base_location',
-    ],
-    'external_dependencies': {},
+    'depends': ['travel_journey', 'travel_hr', 'hr_department_sequence', ],
+    'external_dependencies': {
+        'python': [],
+    },
     'data': [
-        'security/travel_security.xml',
-        'views/travel.xml',
-        'views/travel_passenger.xml',
-        'views/res_config.xml',
-        'security/ir.model.access.csv',
+        'travel_journey_report.xml',
+        'travel_journey_view.xml',
     ],
-    'demo': [
-        'demo/travel.xml',
-    ],
+    'demo': [],
     'test': [],
-    'installable': True,
+    'installable': False,
+    'auto_install': True,
 }

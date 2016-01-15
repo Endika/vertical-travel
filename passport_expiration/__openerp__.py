@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2010 - 2014 Savoir-faire Linux
+#    This module copyright (C) 2013 Savoir-faire Linux
 #    (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -21,39 +21,34 @@
 ##############################################################################
 
 {
-    'name': 'Travel',
-    'version': '8.0.1.0.0',
+    'name': 'Passport Expiration',
+    'version': '0.1',
     'author': "Savoir-faire Linux,Odoo Community Association (OCA)",
     'maintainer': 'Savoir-faire Linux',
     'website': 'http://www.savoirfairelinux.com',
     'license': 'AGPL-3',
-    'category': 'Customer Relationship Management',
-    'summary': 'Travel Management',
+    'category': '',
+    'summary': 'Adds an expiration date for passports',
     'description': """
-Travel
-======
+Passport Expiration
+============
+This module adds the following to employees :
+* passport_expiration_date
 
-Travel management with passengers.
 
-Contributors
-------------
+Contributors:
+=============
 * Sandy Carter (sandy.carter@savoirfairelinux.com)
 """,
-    'depends': [
-        'mail',
-        'base_location',
-    ],
-    'external_dependencies': {},
+    'depends': ['hr', ],
+    'external_dependencies': {
+        'python': [],
+    },
     'data': [
-        'security/travel_security.xml',
-        'views/travel.xml',
-        'views/travel_passenger.xml',
-        'views/res_config.xml',
-        'security/ir.model.access.csv',
+        'hr_view.xml',
     ],
-    'demo': [
-        'demo/travel.xml',
-    ],
+    'demo': [],
     'test': [],
-    'installable': True,
+    'installable': False,
+    'auto_install': False,
 }

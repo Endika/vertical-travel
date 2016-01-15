@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2010 - 2014 Savoir-faire Linux
+#    This module copyright (C) 2013 Savoir-faire Linux
 #    (<http://www.savoirfairelinux.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -21,39 +21,32 @@
 ##############################################################################
 
 {
-    'name': 'Travel',
-    'version': '8.0.1.0.0',
-    'author': "Savoir-faire Linux,Odoo Community Association (OCA)",
-    'maintainer': 'Savoir-faire Linux',
-    'website': 'http://www.savoirfairelinux.com',
-    'license': 'AGPL-3',
+    'name': 'Partner Airport: Module Data',
+    'version': '0.1',
     'category': 'Customer Relationship Management',
-    'summary': 'Travel Management',
     'description': """
-Travel
-======
+Partner Airport: Module Data
+============================
 
-Travel management with passengers.
+Core Data for Partner Airport, is kept as a separate module to overcome the
+need to localize core data as well as to avoid long load times.
 
 Contributors
 ------------
 * Sandy Carter (sandy.carter@savoirfairelinux.com)
-""",
-    'depends': [
-        'mail',
-        'base_location',
-    ],
+* El Hadji Dem (elhadji.dem@savoirfairelinux.com)
+    """,
+    'author': "Savoir-faire Linux,Odoo Community Association (OCA)",
+    'website': 'http://www.savoirfairelinux.com',
+    'license': 'AGPL-3',
+    'depends': ['airport', ],
     'external_dependencies': {},
     'data': [
-        'security/travel_security.xml',
-        'views/travel.xml',
-        'views/travel_passenger.xml',
-        'views/res_config.xml',
-        'security/ir.model.access.csv',
+        'data/airport_data.xml',
     ],
-    'demo': [
-        'demo/travel.xml',
-    ],
+    'demo': [],
     'test': [],
-    'installable': True,
+    'installable': False,
+    'auto_install': False,
+    'images': [],
 }

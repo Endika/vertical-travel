@@ -21,39 +21,35 @@
 ##############################################################################
 
 {
-    'name': 'Travel',
-    'version': '8.0.1.0.0',
+    'name': 'Travel - Purchase Bindings',
+    'version': '0.1',
     'author': "Savoir-faire Linux,Odoo Community Association (OCA)",
     'maintainer': 'Savoir-faire Linux',
     'website': 'http://www.savoirfairelinux.com',
     'license': 'AGPL-3',
-    'category': 'Customer Relationship Management',
-    'summary': 'Travel Management',
+    'category': 'Purchase Management',
+    'summary': "Purchase bindings for Travel",
     'description': """
-Travel
-======
+Travel - Purchase Bindings
+==========================
 
-Travel management with passengers.
+Adds an "Expenses" tab to travel form.
 
 Contributors
 ------------
 * Sandy Carter (sandy.carter@savoirfairelinux.com)
+* Joao Alfredo Gama Batista (joao.gama@savoirfairelinux.com)
 """,
-    'depends': [
-        'mail',
-        'base_location',
-    ],
-    'external_dependencies': {},
+    'depends': ['travel', 'purchase', ],
+    'external_dependencies': {
+        'python': [],
+    },
     'data': [
-        'security/travel_security.xml',
-        'views/travel.xml',
-        'views/travel_passenger.xml',
-        'views/res_config.xml',
         'security/ir.model.access.csv',
+        'travel_view.xml',
     ],
-    'demo': [
-        'demo/travel.xml',
-    ],
+    'demo': [],
     'test': [],
-    'installable': True,
+    'installable': False,
+    'auto_install': True,
 }
